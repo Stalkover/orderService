@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>6fbc4040-bd63-45fd-ba63-1c3da9641d1d.SCHEMA:delivery.public</OriginalElement>
+  <nodes>
+    <node x="-560.4569281524925" y="159.14442815249294">6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.feedback</node>
+    <node x="125.52126099706743" y="185.0">6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.couriers</node>
+    <node x="175.52126099706743" y="465.1708211143697">6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.accepted_order</node>
+    <node x="-303.84121230223366" y="411.1583577712608">6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.orders</node>
+    <node x="-598.3026484604105" y="493.0271260997067">6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.addresses</node>
+    <node x="150.52126099706743" y="653.3416422287394">6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.transport</node>
+    <node x="-290.84121230223366" y="107.5">6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.clients</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.feedback" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.couriers" relationship="REFERENCES">
+      <point x="-62.33333333333334" y="-100.5" />
+      <point x="-529.2902614858259" y="89.83953372434001" />
+      <point x="-529.290261485826" y="89.83953372434001" />
+      <point x="-529.290261485826" y="-47.537390029325366" />
+      <point x="252.53186846041012" y="-47.537390029325366" />
+      <point x="252.53186846041012" y="386.0" />
+      <point x="0.0" y="100.5" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.couriers" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.transport" relationship="REFERENCES">
+      <point x="0.0" y="-100.5" />
+      <point x="233.02126099706743" y="301.0790475201637" />
+      <point x="451.35923753665656" y="301.0790475201637" />
+      <point x="451.35923753665656" y="709.1142381359988" />
+      <point x="204.27126099706743" y="709.1142381359988" />
+      <point x="-53.75" y="43.0" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.accepted_order" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.orders" relationship="REFERENCES">
+      <point x="41.25" y="-54.5" />
+      <point x="299.27126099706743" y="519.6708211143697" />
+      <point x="-183.34121230223366" y="519.6708211143697" />
+      <point x="0.0" y="135.0" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.feedback" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.clients" relationship="REFERENCES">
+      <point x="62.333333333333336" y="-100.5" />
+      <point x="-441.4750688563049" y="159.14442815249294" />
+      <point x="-441.4750688563049" y="36.73387096774226" />
+      <point x="-214.78885184750732" y="36.73387096774226" />
+      <point x="-214.78885184750732" y="285.5" />
+      <point x="0.0" y="89.0" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.orders" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.addresses" relationship="REFERENCES">
+      <point x="30.125" y="-135.0" />
+      <point x="-153.21621230223366" y="600.6861747800586" />
+      <point x="-446.8026484604105" y="600.6861747800586" />
+      <point x="50.5" y="77.5" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.orders" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.transport" relationship="REFERENCES">
+      <point x="-90.375" y="-135.0" />
+      <point x="-273.71621230223366" y="638.8398275659805" />
+      <point x="-183.34121230223366" y="638.8398275659805" />
+      <point x="-183.34121230223366" y="720.5345073313783" />
+      <point x="311.77126099706743" y="720.5345073313783" />
+      <point x="53.75" y="43.0" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.orders" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.clients" relationship="REFERENCES">
+      <point x="90.375" y="-135.0" />
+      <point x="-92.96621230223366" y="432.10338357302027" />
+      <point x="-231.31371728757074" y="432.10338357302027" />
+      <point x="-231.31371728757074" y="196.5" />
+      <point x="-183.34121230223366" y="196.5" />
+      <point x="0.0" y="89.0" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.feedback" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.orders" relationship="REFERENCES">
+      <point x="0.0" y="-100.5" />
+      <point x="-466.95692815249254" y="440.4964809384165" />
+      <point x="-183.34121230223366" y="440.4964809384165" />
+      <point x="0.0" y="135.0" />
+    </edge>
+    <edge source="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.accepted_order" target="6fbc4040-bd63-45fd-ba63-1c3da9641d1d.TABLE:delivery.public.couriers" relationship="REFERENCES">
+      <point x="-41.25" y="-54.5" />
+      <point x="216.77126099706743" y="386.0" />
+      <point x="0.0" y="100.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.35291073738680534" showDependencies="false" x="-310.2593759530771" y="537.126879032255" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

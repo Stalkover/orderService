@@ -1,0 +1,5 @@
+services:
+  spring-app:
+    image: my-spring-app
+    ports:
+      - 8080:8080

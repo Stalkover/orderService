@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 500px;"></div>
+    <script>
+        var map = L.map('map').setView([0, 0], 1);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var latlngs = [
+            [45.51, -122.68],
+            [37.77, -122.43],
+            [34.04, -118.2]
+        ];
+
+        var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+
+        map.fitBounds(polyline.getBounds());
+    </script>
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            // AJAX call to fetch coordinates from the controller-->
+<!--            $.ajax({-->
+<!--                url: '/map',-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(coordinates) {-->
+<!--                    // Process the coordinates here-->
+<!--                    console.log(coordinates);-->
+<!--                    // Now you can use coordinates to draw the polyline on the map-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error('Error fetching coordinates:', error);-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+</body>
+</html>
