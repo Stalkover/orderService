@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order</title>
+</head>
+<body>
+<h1>Order List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Order ID</th>
+        <th>Initial Address</th>
+        <th>Destination Address</th>
+        <th>Description</th>
+        <th>Status</th>
+        <!-- Add more headers as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of orders -->
+    <tr th:each="order : ${orders}">
+        <td>
+            <a th:href="@{'/client/order/' + ${order.id}}"> <!-- Link to /order/{id} -->
+                <span th:text="${order.id}"></span>
+            </a>
+        </td>
+        <td th:text="${order.initialAddress.address}"></td>
+        <td th:text="${order.destinationAddress.address}"></td>
+        <td th:text="${order.description}"></td>
+        <td th:text="${order.status}"></td>
+        <!-- Add more columns as needed -->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Route Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/courier">Main</a></li>
+            <li><a href="/courier/order">Your orders</a></li>
+            <li><a href="/courier/order/all">All orders</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script th:inline="javascript">
+    // Coordinates passed from the model
+    var coordinates = /*[[${coordinates}]]*/ [];
+    console.log(coordinates);
+    coordinates = JSON.parse(coordinates);
+
+    var latlngs = coordinates.map(coord => [coord[0], coord[1]]);
+
+    // Initialize the map
+    var map = L.map('map').setView([34.433, 71.534], 5);
+
+    // Add a tile layer to the map
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+
+
+    // Create a polyline and add it to the map
+    var polyline = L.polyline(latlngs, {color: 'blue'}).addTo(map);
+
+    // Zoom the map to the polyline
+    map.fitBounds(polyline.getBounds());
+</script>
+<button onclick="window.location.href='/routing'">Go back</button>
+<!--<p><a href="/routing">Go back</a></p>-->
+</body>
+</html>

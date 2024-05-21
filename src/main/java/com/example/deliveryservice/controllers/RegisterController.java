@@ -2,6 +2,7 @@ package com.example.deliveryservice.controllers;
 
 import com.example.deliveryservice.dto.ClientDto;
 import com.example.deliveryservice.dto.CourierDto;
+import com.example.deliveryservice.dto.RegisterDto;
 import com.example.deliveryservice.entities.Courier;
 import com.example.deliveryservice.services.ClientService;
 import com.example.deliveryservice.services.CourierService;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -26,15 +28,16 @@ public class RegisterController {
         return "registerPage";
     }
     @PostMapping("/register")
-    public String register(@RequestParam("firstName") String firstName,
-                           @RequestParam("lastName") String lastName,
-                           @RequestParam("email") String email,
-                           @RequestParam("phoneNumber") String phoneNumber,
-                           @RequestParam("password") String password,
-                           @RequestParam("role") String role,
-                            @RequestParam("transport_type") String transport){
+    public String register(
+            @RequestParam String firstName,
+            @RequestParam String lastName,
+            @RequestParam String email,
+            @RequestParam String phoneNumber,
+            @RequestParam String password,
+            @RequestParam String role,
+            @RequestParam(required = false) String transport) {
 
-        if(role.equals("client")){
+        if (role.equals("client")) {
             ClientDto clientDto = new ClientDto();
             clientDto.setFirstName(firstName);
             clientDto.setLastName(lastName);
@@ -52,7 +55,6 @@ public class RegisterController {
             courierDto.setTransport(transport);
             courierService.save(courierDto);
         }
-
         return "registerPage";
     }
 }

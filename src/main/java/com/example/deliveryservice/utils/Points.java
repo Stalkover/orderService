@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 public class Points {
     private List<List<Double>> coordinates = new ArrayList<>();
-    public void setPoint(Double latitude, Double longitude){
+    public void addPoint(Double latitude, Double longitude){
         List<Double> point = new ArrayList<>();
         point.add(longitude);
         point.add(latitude);

@@ -6,6 +6,16 @@
 </head>
 <body>
     <h1>Create Order</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/client">Main</a></li>
+                <li><a href="/client/order">Orders</a></li>
+                <li><a href="/client/order/create">Make Order</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
     <p>Order details</p>
     <form action="/client/order/save" method="post">
         <label for="initialAddress">Initial Address</label><br>
@@ -15,9 +25,9 @@
         <label for="description">Description</label><br>
         <input type="text" id="description" name="description"><br>
         <label>Transport type</label>
-        <input type="radio" id="foot" name="transport_type" value="foot">
+        <input type="radio" id="foot" name="transport" value="foot">
         <label for="foot">Foot</label>
-        <input type="radio" id="car" name="transport_type" value="car">
+        <input type="radio" id="car" name="transport" value="car">
         <label for="car">Car</label>
         <input type="submit"><br>
     </form>
