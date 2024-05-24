@@ -23,10 +23,10 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 import java.util.List;
-
 @Controller
 @RequestMapping("/client")
 @PreAuthorize("hasAuthority('ROLE_CLIENT')")
+@CrossOrigin
 public class ClientController {
     Geocoding geocoding;
     Routing routing;
